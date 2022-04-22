@@ -1,0 +1,26 @@
+main {
+  width: 380px;
+  margin: auto;
+}
+
+.btn-primary {
+  color: #fbfcfd;
+  background-color: #28a745;
+  width: 75%;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background-color: forestgreen;
+}
+
+.btn-secondary {
+  color: #fbfcfd;
+  background-color: #28a745;
+  width: 50%;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background-color: forestgreen;
+}
