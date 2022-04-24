@@ -39,7 +39,7 @@ function App() {
           setMaxNumber={setMaxNumber} />} />
     <Route exact path="/game/anagramhunt"
         component={()=>
-        <AnagramHuntGame />} />
+        <AnagramHuntGame wordLength={wordLength}/>} />
     <Route path="/game/mathfacts"
         component={()=>
         <MathFactsGame operation={operation}

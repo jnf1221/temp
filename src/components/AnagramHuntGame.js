@@ -5,16 +5,14 @@ import Timer from "./Timer";
 import { randInt } from "../helpers/helper";
 import Keyboard from "./Keyboard";
 import './MathFactsGame.css'
-import AnagramsLeft from "./AnagramsLeft";
+// import AnagramsLeft from "./AnagramsLeft";
 var anagrams = require('../helpers/anagrams.json');
-function AnagramHuntGame({operation, wordLength}) {
 
-  console.log(anagrams);
+function AnagramHuntGame({operation, wordLength}) {
 
   let randNums = getWords(wordLength);
   const [operands, setOperands] = useState(randNums);
-  const question = operands.num1 + ' ' + operation +
-    ' ' + operands.num2;
+  const question = "";
 
   const [userAnswer, setUserAnswer] = useState('');
   const [answered, setAnswered] = useState(false);
@@ -47,11 +45,11 @@ function AnagramHuntGame({operation, wordLength}) {
     return (parseInt(userAnswer) === correctAnswer);
   }
 
-  if (!answered && checkAnswer(userAnswer)) {
-    setAnswered(true);
-    setScore(score + 1);
-    setTimeout(newWord, 300);
-  }
+  // if (!answered && checkAnswer(userAnswer)) {
+  //   setAnswered(true);
+  //   setScore(score + 1);
+  //   setTimeout(newWord, 300);
+  // }
   function newWord() {
   }
 
@@ -62,10 +60,11 @@ function AnagramHuntGame({operation, wordLength}) {
   }
 
   function getWords(){
-  const anagram = wordLength.filter((wordLength) =>  anagrams.wordLength === wordLength);
-  return Object.keys(anagrams).find(wordLength => [wordLength] === wordLength);
-  console.log(`${JSON.stringify(anagram)}`)
-  return anagram;
+    console.log(`${wordLength.toString()} ${typeof(wordLength.toString())}`);
+    console.log(`${JSON.stringify(Object.keys(anagrams.wordLength))}`);
+    console.log(`Object.values: ${Object.values(anagrams.wordLength[wordLength])}`);
+    var temp = Object.keys(anagrams.wordLength).find(key => anagrams.wordLength[key] === wordLength.toString());
+    console.log(`${JSON.stringify(temp)}`);
   }
   
   const equationClass = answered
@@ -104,7 +103,7 @@ function AnagramHuntGame({operation, wordLength}) {
         </div>
       </div>
         <div style={{fontSize: "2.5em"}}>
-          <AnagramsLeft />
+          
         </div>
       <Keyboard setUserAnswer={setUserAnswer} />
     </main>
