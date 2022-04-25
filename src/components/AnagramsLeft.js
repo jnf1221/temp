@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react';
-var anagrams = require('../helpers/anagrams.json');
 
 function AnagramsLeft({word, wordLength}) {
   const setWord = wordLength.filter(5)
